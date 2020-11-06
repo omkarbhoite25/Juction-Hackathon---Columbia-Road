@@ -1,2 +1,2 @@
-# Juction-Hackathon---Columbia-Road
+# Juction-Hackathon-Columbia-Road
 Hackathon
