@@ -1,0 +1,6 @@
+flask
+Flask-Cors
+requests
+numpy
+pandas
+regex
