@@ -11,7 +11,8 @@ Predicto is a AI able to predict the utilities you need when you need them. It w
 Our code is hosted on https://predicto.pythonanywhere.com/
 We offer two API:
  - */update/transaction* | This endpoint is expecting data coming in the form of:
- ` {
+ ```
+     {
       'id': BASKET_ID,
       'timestamp': unixEpoch,
       'customer': CUST_CODE,
@@ -20,10 +21,15 @@ We offer two API:
                     'prod_id': PROD_CODE,
                     'cat_id': PROD_CODE_10
                }]
-       }
- `
+     }
+ ```
  - */get/suggestion* | When provided with a JSON object:
- `{'customer': CUST_CODE, 'timestamp': unixEpoch}`
+ ```
+ {
+   'customer': CUST_CODE,
+   'timestamp': unixEpoch
+ }
+ ```
  
 ## RUN
 To run the validator is very easy to download the python notebook Simulator.ipny and run in the environment of your choice. The code can simulate a real situation and check the validity of the prediction using the dataset provided in this same repository.
