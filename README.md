@@ -1,7 +1,9 @@
 # PREDICTO
 ### Juction-Hackathon-Columbia-Road
 ------------
-Predicto is a AI able to predict the utilities you need when you need them. It will be able to fill the shopping cart of your customer as soon as they log in. It works with many different e-commerce platform with an effortless integration code. It work with just your transaction data and exploit bayesian regression to provide a concrete.
+Predicto is a AI-based predicting system able to predict your next shopping cart, what you need, when you need. It will be able to fill the shopping cart with your repetitive purchases as soon as your customer log in on the platform. It would work with many different e-commerce platform with small integration code needed.
+Leveraging old transaction history Predicto will create, maintain, and iterate its bayesian model from which the prediction is drawn.
+The model can be updated online and improve itself as the transaction history grows.
 
 ## REQUIREMENTS
  - Python Flusk
@@ -43,6 +45,12 @@ We offer two API:
 ## RUN
 To run the validator is very easy to download the python notebook Simulator.ipny and run in the environment of your choice. The code can simulate a real situation and check the validity of the prediction using the dataset provided in this same repository.
 
+## USER EXPERIENCE
+We envisioned a new and better user experience for the customers of the platform as can be see by the [following workflow](https://www.figma.com/file/nH156e9v4jv6iNkGMTFUJG/Untitled?node-id=6%3A526) 
+
 ## FUTURE WORK
-A pluging for E-commerce platform would be our next step in order to bring this fast, efforless experience to each business. Tailored solution can be expanded and brought also into offline shopping enhancing the whole user experience and increasing the satisfaction and retetion rate. 
+A pluging for E-commerce platform would be our next step in order to bring this fast, efforless experience to each business. Tailored solution can be expanded and brought also into offline shopping enhancing the whole user experience and increasing the satisfaction and retetion rate.
+
+# TEAM
+
 
