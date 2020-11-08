@@ -5,12 +5,13 @@ Predicto is a AI able to predict the utilities you need when you need them. It w
 
 ## REQUIREMENTS
  - Python Flusk
- - Basically everything was made with python <3
+ - Basically everything was made with <3 and python
  
 ## DOCS
-Our code is hosted on https://predicto.pythonanywhere.com/
+Our code is hosted on https://predicto.pythonanywhere.com/ free of charge and free of data. This means that you should feed the AI in order to get insights.
+Remember, garbage in garbage out!  
 We offer two API:
- - */update/transaction* | This endpoint is expecting data coming in the form of:
+ - *POST /update/transaction* | This endpoint is expecting data coming in the form of:
  ```
      {
       'id': BASKET_ID,
@@ -23,11 +24,19 @@ We offer two API:
                }]
      }
  ```
- - */get/suggestion* | When provided with a JSON object:
+ - *GET /get/suggestion* | When provided with a JSON object as specified below the API will grant a prediction to the customer if relevant:
  ```
+ REQUEST
  {
    'customer': CUST_CODE,
    'timestamp': unixEpoch
+ }
+ 
+ RESPONSE
+ {
+   "Message" : "Amazing/No Prediction Available",
+   "Products": [PROD_CODE],
+   "Categories": [PROD_CODE_10]
  }
  ```
  
