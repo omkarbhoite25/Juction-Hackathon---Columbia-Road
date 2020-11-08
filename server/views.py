@@ -94,7 +94,7 @@ def new_transaction():
     #print(row['c1'], row['c2'])
     return jsonify(prediction_table)
 
-@landing.route('/get/suggestion')
+@app.route('/get/suggestion')
 def suggestion():
     c=request.args.get("customer")
     timestamp=int(request.args.get("timestamp"))
@@ -117,15 +117,6 @@ def suggestion():
                     prediction_table[c][p][INDEX_PREDICTED]=1
                     grocery_list.append(p)
 
-                ##Check if element bought inside the range
-                #from_ = timestamp- stats[INDEX_VAR]*24*60*60
-                #to_ = timestamp+ stats[INDEX_VAR]*24*60*60
-
-                #d_tmp=df.loc[(df['PROD_CODE_10'] ==p) & (df['CUST_CODE'] == c) & (df["TIMESTAMP"]>=from_) & (df["TIMESTAMP"]<=to_) ]
-                #if d_tmp.empty:
-                #  failure=failure+1
-                #else:
-                #  success=success+1
                 print(grocery_list)
         if len(grocery_list)>0:
             print(str((datetime.datetime.fromtimestamp(timestamp)).date()) +"***"+str(timestamp)+" "+str(c) +" maybe wants to buy: "+str(grocery_list))
@@ -140,8 +131,10 @@ def suggestion():
                     new_item = new_item.sample()
                 grocery_recommended.extend(new_item["PROD_CODE"].to_list())
     #print(str((datetime.datetime.fromtimestamp(timestamp)).date()) +" "+str(c) +" maybe wants to buy: "+str(grocery_recommended))
-
-    return jsonify({"Message" : "Amazing", "Products":grocery_recommended})
+    if grocery_recommended:
+        return jsonify({"Message" : "Amazing", "Products": grocery_recommended, "Categories": [product_class]})
+    else:
+        return jsonify({"Message" : "No prediction available", "Products": grocery_recommended, "Categories": []})
 
 def sub_timestamp(timestamp_1, timestamp_2):
   t1 = datetime.datetime.fromtimestamp(int(timestamp_1))
